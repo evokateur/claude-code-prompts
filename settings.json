@@ -140,8 +140,9 @@
       "Bash(git add --force:*)",
       "Bash(git push:*)",
       "Bash(git worktree remove --force:*)",
-      "Bash(rm -rf: *)",
-      "Bash(op: *)"
+      "Bash(op)",
+      "Bash(op:*)",
+      "Bash(rm -rf: *)"
     ]
   },
   "enabledMcpjsonServers": [
@@ -159,5 +160,6 @@
         ]
       }
     ]
-  }
+  },
+  "model": "opus"
 }
