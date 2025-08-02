@@ -24,8 +24,9 @@ The task list is in `.llm/todo.md`. The format is:
 
 - ✅ After the implementation is complete and verified
   - Mark the task as complete:
-  - Run `complete $(git rev-parse --show-top-level)/.llm/todo.md`
+  - Run `todo-complete $(git rev-parse --show-top-level)/.llm/todo.md`
   - It marks the first incomplete task as `[x]`
 
-- Commit according to the instructions in ~/.claude/commands/commit.md
+- Use the "precommit" agent to run precommit tests.
+- Use the "commit" agent to commit our changes.
 
