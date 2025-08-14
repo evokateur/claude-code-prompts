@@ -22,6 +22,7 @@ The task list is in `.llm/todo.md`. The format is:
 - Create the worktree:
   - Run `worktree <task-name>`
   - This command marks the task with `[>]` and creates the worktree
+  - If the command exits with a non-success exit code, stop here and give a good summary to the user
 
 - Edit the original todo file to add a comment indicating which worktree is working on the task:
 ```markdown

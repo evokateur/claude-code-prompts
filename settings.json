@@ -153,6 +153,10 @@
   "enabledMcpjsonServers": [
     "brave-search"
   ],
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline-command.sh"
+  },
   "hooks": {
     "Stop": [
       {
