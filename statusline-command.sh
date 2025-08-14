@@ -1,29 +1,16 @@
 #!/bin/bash
 
-readonly GREEN='\033[92m'
-readonly YELLOW='\033[93m'
-readonly RED='\033[91m'
-readonly RESET='\033[0m'
-readonly BOLD='\033[1m'
+# https://starship.rs/faq/#the-docs-say-starship-is-cross-shell-why-isn-t-my-preferred-shell-supported
 
+# Get the status code from the last command executed
+STATUS=$?
+
+# Read JSON input from stdin
 input=$(cat)
 
-model_name=$(echo "$input" | jq -r '.model.display_name // "Claude"')
-current_dir=$(echo "$input" | jq -r '.workspace.current_dir // "."')
+PART1=$(echo "$input" | npx -y @owloops/claude-powerline@latest --theme=tokyo-night)
+PART2=$(starship prompt --status=$STATUS)
+PART3=$(echo "$input" | npx -y ccusage@latest statusline)
+PART4=$(echo "$input" | npx -y ccstatusline@latest)
 
-# Choose color based on model name
-if [[ "$model_name" == *"Opus"* ]]; then
-    model_color="${GREEN}"
-elif [[ "$model_name" == *"Sonnet"* ]]; then
-    model_color="${YELLOW}"
-else
-    model_color="${RED}"
-fi
-
-cd "$current_dir" 2>/dev/null || true
-
-starship_output=$(starship prompt 2>/dev/null)
-
-output_string=" ${BOLD}${model_color}${model_name}${RESET} ${starship_output}"
-
-echo -e "$output_string"
+echo -e "$PART1\n$PART2\n$PART3 | $PART4"
