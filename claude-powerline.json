@@ -5,7 +5,7 @@
         "segments": {
           "directory": {
             "enabled": true,
-            "showBasename": false
+            "showBasename": true
           },
           "git": {
             "enabled": true,
@@ -24,14 +24,15 @@
           "today": { "enabled": false, "type": "both" },
           "context": { "enabled": true },
           "tmux": { "enabled": false },
-          "metrics": { 
+          "metrics": {
             "enabled": true,
             "showResponseTime": false,
             "showDuration": false,
             "showMessageCount": true,
             "showCostBurnRate": false,
             "showTokenBurnRate": false
-          }
+          },
+          "version": { "enabled": true }
         }
       }
     ]
