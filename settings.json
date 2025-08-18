@@ -144,6 +144,10 @@
       "Bash(npm run serve:*)",
       "Bash(npm run start &)",
       "Bash(npm run start:*)",
+      "Bash(npm install -g:*)",
+      "Bash(npm install --global:*)",
+      "Bash(npm i -g:*)",
+      "Bash(npm i --global:*)",
       "Bash(op)",
       "Bash(op:*)",
       "Bash(rm -rf: *)"
